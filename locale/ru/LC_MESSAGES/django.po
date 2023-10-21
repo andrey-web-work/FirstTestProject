@@ -1,0 +1,68 @@
+# SPDX-FileCopyrightText: 2023 YEAR 2023
+# This file is distributed under the same license as the PACKAGE package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-10-21 13:58+0300\n"
+"PO-Revision-Date: 2023-10-21 13:58+0300\n"
+"Last-Translator: Andrey Korchagin\n"
+"Language-Team: Russian <kde-russian@lists.kde.ru>\n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<"
+"=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+"X-Generator: Lokalize 23.08.0\n"
+
+#: core/models.py:16
+msgid "main department"
+msgstr "основной отдел"
+
+#: core/models.py:18
+msgid "department name"
+msgstr "название отдела"
+
+#: core/models.py:25 core/models.py:33
+msgid "department"
+msgstr "отдел"
+
+#: core/models.py:26
+msgid "departments"
+msgstr "отделы"
+
+#: core/models.py:34
+msgid "surname"
+msgstr "фамилия"
+
+#: core/models.py:35
+msgid "name"
+msgstr "имя"
+
+#: core/models.py:36
+msgid "paternal name"
+msgstr "отчество"
+
+#: core/models.py:37
+msgid "position"
+msgstr "должность"
+
+#: core/models.py:43
+msgid "salary amount"
+msgstr "зарплата"
+
+#: core/models.py:45
+msgid "employment date"
+msgstr "дата приёма на работу"
+
+#: core/models.py:51
+msgid "employee"
+msgstr "работник"
+
+#: core/models.py:52
+msgid "employees"
+msgstr "работники"
+

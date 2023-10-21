@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{% load l10n %}
+{% load mptt_tags %}
+
+{% block title %}{% translate "Employees list" %}{% endblock %}
+
+{% block content %}
+    <div class="accordion" id="accordion_{{ node.parent.id }}">
+        {% recursetree departments_list %}
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_{{ node.id }}" aria-expanded="false" aria-controls="collapse_{{ node.id }}">
+                        {{ node.name }}
+                    </button>
+                </h2>
+                <div id="collapse_{{ node.id }}" class="accordion-collapse collapse" data-bs-parent="#accordion_{{ node.parent.id }}">
+                    <div class="accordion-body">
+                        {% if not node.is_leaf_node %}
+                            <div class="accordion" id="accordion_{{ node.id }}">
+                                {{ children }}
+                            </div>
+                        {% endif %}
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">{% translate "surname"|title %}</th>
+                                    <th scope="col">{% translate "name"|title %}</th>
+                                    <th scope="col">{% translate "paternal name"|title %}</th>
+                                    <th scope="col">{% translate "position"|title %}</th>
+                                    <th scope="col">{% translate "salary amount"|title %}</th>
+                                    <th scope="col">{% translate "employment date"|title %}</th>
+                                </tr>
+                            </thead>
+
+                            {% for employee in node.employees.all %}
+                                <tr>
+                                    <th scope="col">{{ forloop.counter }}</th>
+                                    <th scope="col">{{ employee.surname }}</th>
+                                    <th scope="col">{{ employee.name }}</th>
+                                    <th scope="col">{{ employee.paternal_name }}</th>
+                                    <th scope="col">{{ employee.position }}</th>
+                                    <th scope="col">{{ employee.salary_amount }}</th>
+                                    <th scope="col">{{ employee.employment_date|date:"d.m.Y" }}</th>
+                                </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                </div>
+            </div>
+        {% endrecursetree %}
+    </div>
+{% endblock %}
