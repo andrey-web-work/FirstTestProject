@@ -30,7 +30,12 @@ class Department(MPTTModel):
 
 
 class Employee(models.Model):
-    department = models.ForeignKey(Department, on_delete=models.CASCADE, verbose_name=_("department"))
+    department = models.ForeignKey(
+        Department,
+        on_delete=models.CASCADE,
+        related_name="employees",
+        verbose_name=_("department")
+    )
     surname = models.CharField(max_length=50, verbose_name=_("surname"))
     name = models.CharField(max_length=50, verbose_name=_("name"))
     paternal_name = models.CharField(max_length=50, blank=True, verbose_name=_("paternal name"))

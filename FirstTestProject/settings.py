@@ -25,7 +25,10 @@ SECRET_KEY = "django-insecure-siyxycb7f@p=eef*1*q!ndvbxb*jk9p2@9fw2g_0nkfaml1xc)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "127.0.0.1",
+    "localhost"
+]
 
 
 # Application definition
@@ -40,7 +43,6 @@ INSTALLED_APPS = [
 
     "mptt",
     "django_admin_inline_paginator",
-    "nested_admin",
 
     "core"
 ]
@@ -53,6 +55,15 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+]
+
+if DEBUG:
+    INSTALLED_APPS.append("debug_toolbar")
+    MIDDLEWARE.append("debug_toolbar.middleware.DebugToolbarMiddleware")
+
+INTERNAL_IPS = [
+    "127.0.0.1",
+    "localhost"
 ]
 
 ROOT_URLCONF = "FirstTestProject.urls"
@@ -118,6 +129,8 @@ LOCALE_PATHS = [
 TIME_ZONE = "Europe/Moscow"
 
 USE_I18N = True
+
+USE_L10N = True
 
 USE_TZ = True
 
