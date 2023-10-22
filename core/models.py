@@ -53,5 +53,6 @@ class Employee(models.Model):
         return f'{self.surname} {self.name} {self.paternal_name}'
 
     class Meta:
+        ordering = ["surname"]
         verbose_name = _("employee")
         verbose_name_plural = _("employees")

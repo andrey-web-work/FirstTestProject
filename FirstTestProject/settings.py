@@ -43,6 +43,9 @@ INSTALLED_APPS = [
 
     "mptt",
     "django_admin_inline_paginator",
+    "debug_toolbar",
+
+    "rest_framework",
 
     "core"
 ]
@@ -55,11 +58,8 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
-
-if DEBUG:
-    INSTALLED_APPS.append("debug_toolbar")
-    MIDDLEWARE.append("debug_toolbar.middleware.DebugToolbarMiddleware")
 
 INTERNAL_IPS = [
     "127.0.0.1",
@@ -140,9 +140,13 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-MPTT_ADMIN_LEVEL_INDENT = 25
+MPTT_ADMIN_LEVEL_INDENT = 20
