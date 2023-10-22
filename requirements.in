@@ -1,3 +1,8 @@
+pip-tools
+
 django
 django-mptt
 django-admin-inline-paginator
+django-debug-toolbar
+
+djangorestframework

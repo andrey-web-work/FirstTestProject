@@ -6,22 +6,42 @@
 #
 asgiref==3.7.2
     # via django
+build==1.0.3
+    # via pip-tools
+click==8.1.7
+    # via pip-tools
 django==4.2.6
     # via
     #   -r requirements.in
     #   django-admin-inline-paginator
+    #   django-debug-toolbar
     #   django-js-asset
+    #   djangorestframework
 django-admin-inline-paginator==0.4.0
+    # via -r requirements.in
+django-debug-toolbar==4.2.0
     # via -r requirements.in
 django-js-asset==2.1.0
     # via django-mptt
 django-mptt==0.15.0
     # via -r requirements.in
-django-nested-admin==4.0.2
+djangorestframework==3.14.0
     # via -r requirements.in
-python-monkey-business==1.0.0
-    # via django-nested-admin
-six==1.16.0
-    # via python-monkey-business
+packaging==23.2
+    # via build
+pip-tools==7.3.0
+    # via -r requirements.in
+pyproject-hooks==1.0.0
+    # via build
+pytz==2023.3.post1
+    # via djangorestframework
 sqlparse==0.4.4
-    # via django
+    # via
+    #   django
+    #   django-debug-toolbar
+wheel==0.41.2
+    # via pip-tools
+
+# The following packages are considered to be unsafe in a requirements file:
+# pip
+# setuptools
